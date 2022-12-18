@@ -5,15 +5,11 @@ class WikipediaSpider(scrapy.Spider):
     name = "wikipedia"
     allowed_domains = ["wikipedia.org"]
     start_urls = ["https://pl.wikipedia.org/wiki/Bumerang"]
-
-    a = 0
+    links_selector = ".mw-parser-output > *:not(#Vorlage_Alternative):not(.metadata) a[href^='/wiki']::attr(href)"
 
     def parse(self, response):
-        if self.a < 5:
-            self.a += 1
-            links = response.css(
-                ".mw-parser-output > *:not(#Vorlage_Alternative):not(.metadata) a[href^='/wiki']::attr(href)"
-            ).getall()
+        if response.meta["depth"] < 5:
+            links = response.css(self.links_selector).getall()
             links = [link for link in links if "." not in link]
             yield response.follow(links[0])
         else:
