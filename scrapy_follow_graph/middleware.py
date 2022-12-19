@@ -27,6 +27,7 @@ class FollowGraphMiddleware:
             scrapy_follow_path.append(response.url)
             request.meta["scrapy_follow_path"] = scrapy_follow_path
         else:
+            scrapy_follow_path.extend([response.url])
             scrapy_follow_path.append(request["title"])
             request["scrapy_follow_path"] = scrapy_follow_path
         return True
