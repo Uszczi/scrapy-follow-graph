@@ -1,9 +1,17 @@
 from scrapy.http import Request
+from scrapy import signals
 
 
 class FollowGraphMiddleware:
     @classmethod
-    def from_crawler(cls, crawler):
+    def from_crawler(cls, crawler, *args, **kwargs):
+        print("[")
+        print("[")
+        print("[")
+        print("[")
+        print("[")
+        crawler.signals.connect(cls._item_scraped, signal=signals.item_scraped)
+        crawler.signals.connect(cls._spider_closed, signal=signals.spider_closed)
         return cls()
 
     def process_spider_output(self, response, result, spider):
@@ -31,3 +39,15 @@ class FollowGraphMiddleware:
             scrapy_follow_path.append(request["title"])
             request["scrapy_follow_path"] = scrapy_follow_path
         return True
+
+    @classmethod
+    def _item_scraped(cls, item):
+        print("asdfasdf")
+
+    @classmethod
+    def _spider_closed(cls):
+        print("]")
+        print("]")
+        print("]")
+        print("]")
+        print("]")
