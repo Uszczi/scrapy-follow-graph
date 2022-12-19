@@ -21,14 +21,12 @@ class FollowGraphMiddleware:
             response.meta["scrapy_follow_path"] = []
 
     def _filter(self, request, response, spider):
-        if not isinstance(request, Request):
-            scrapy_follow_path = response.meta["scrapy_follow_path"]
+        scrapy_follow_path = response.meta["scrapy_follow_path"]
+
+        if isinstance(request, Request):
+            scrapy_follow_path.append(response.url)
+            request.meta["scrapy_follow_path"] = scrapy_follow_path
+        else:
             scrapy_follow_path.append(request["title"])
             request["scrapy_follow_path"] = scrapy_follow_path
-            return True
-
-        scrapy_follow_path = response.meta["scrapy_follow_path"]
-        scrapy_follow_path.append(response.url)
-        request.meta["scrapy_follow_path"] = scrapy_follow_path
-
         return True
