@@ -5,6 +5,7 @@ class WikipediaSpider(scrapy.Spider):
     name = "wikipedia"
     allowed_domains = ["wikipedia.org"]
     start_urls = ["https://pl.wikipedia.org/wiki/Bumerang"]
+    custom_settings = {"HTTPCACHE_ENABLED": True}
     links_selector = ".mw-parser-output > *:not(#Vorlage_Alternative):not(.metadata) a[href^='/wiki']::attr(href)"
 
     def parse(self, response):
