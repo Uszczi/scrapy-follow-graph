@@ -9,13 +9,16 @@ class WikipediaSpider(scrapy.Spider):
         "https://en.wikipedia.org/wiki/The_Witcher",
     ]
     custom_settings = {
-        "HTTPCACHE_ENABLED": True,
         "SPIDER_MIDDLEWARES": {
             "scrapy_follow_graph.middleware.FollowGraphMiddleware": 543,
         },
     }
 
-    links_selector = ".mw-parser-output > *:not(#Vorlage_Alternative):not(.metadata) a[href^='/wiki']:not([href*='jpg']):not(.mw-disambig):not(.image)::attr(href)"
+    links_selector = (
+        ".mw-parser-output > "
+        "*:not(#Vorlage_Alternative):not(.metadata) "
+        "a[href^='/wiki']:not([href*='jpg']):not(.mw-disambig)::attr(href)"
+    )
 
     def parse(self, response):
         if response.meta["depth"] < 5:

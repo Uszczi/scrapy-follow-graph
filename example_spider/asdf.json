@@ -1,0 +1,4 @@
+[
+{"url": "https://pl.wikipedia.org/wiki/Rewolwer", "title": "Rewolwer", "scrapy_follow_path": ["https://pl.wikipedia.org/wiki/Bumerang", "https://pl.wikipedia.org/wiki/Pocisk", "https://pl.wikipedia.org/wiki/Haubica", "https://pl.wikipedia.org/wiki/Lufa", "https://pl.wikipedia.org/wiki/Bro%C5%84_palna", "https://pl.wikipedia.org/wiki/Rewolwer", "Rewolwer"]},
+{"url": "https://en.wikipedia.org/wiki/Traditional_Chinese_characters", "title": "Traditional Chinese characters", "scrapy_follow_path": ["https://en.wikipedia.org/wiki/The_Witcher", "https://en.wikipedia.org/wiki/Sword_of_Destiny", "https://en.wikipedia.org/wiki/Crouching_Tiger,_Hidden_Dragon:_Sword_of_Destiny", "https://en.wikipedia.org/wiki/Yuen_Woo-ping", "https://en.wikipedia.org/wiki/True_Legend", "https://en.wikipedia.org/wiki/Traditional_Chinese_characters", "Traditional Chinese characters"]}
+]
