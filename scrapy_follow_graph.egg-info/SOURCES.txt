@@ -1,0 +1,8 @@
+README.md
+setup.py
+scrapy_follow_graph/__init__.py
+scrapy_follow_graph/middleware.py
+scrapy_follow_graph.egg-info/PKG-INFO
+scrapy_follow_graph.egg-info/SOURCES.txt
+scrapy_follow_graph.egg-info/dependency_links.txt
+scrapy_follow_graph.egg-info/top_level.txt

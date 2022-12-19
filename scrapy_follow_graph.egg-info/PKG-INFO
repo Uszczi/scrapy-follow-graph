@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: scrapy-follow-graph
+Version: 1.0.0
+Summary: TODO
+Home-page: https://github.com/Uszczi/scrapy-follow-graph
+Classifier: Framework :: Scrapy
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Internet :: WWW/HTTP
+Requires-Python: >=3.8
